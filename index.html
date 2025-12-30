@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Новым Годом!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ЭКРАН 1: ПРИВЕТСТВИЕ -->
+    <section id="start-screen" class="screen">
+        <!-- Верхняя панель -->
+        <div class="top-panel">
+            <img src="images/hellokiyty.gif" alt="" class="side-gif">
+            <div class="panel-title">С Новым Годом! ❄️</div>
+            <img src="images/hellokiyty1.gif" alt="" class="side-gif">
+        </div>
+
+        <!-- Основной контент -->
+        <div class="content">
+            <!-- Контейнер для фото с гифкой -->
+            <div class="photo-container">
+                <img src="images/1.jpg" alt="Фото" class="main-photo">
+                <!-- Гифка справа сверху -->
+                <img src="images/hellokitty3.gif" alt="" class="photo-gif">
+            </div>
+            
+            <h1>Этот год был особенным благодаря тебе</h1>
+            <p class="greeting-text"> Я люблю тебя, я сделаю следующий год только лучше</p>
+            <button id="enter-btn" class="magic-button">Окунуться в этот год</button>
+        </div>
+    </section>
+
+    <!-- ЭКРАН 2: ГЛАВНАЯ -->
+    <section id="main-screen" class="screen hidden">
+        <!-- Верхняя панель БЕЗ PNG -->
+        <div class="top-panel">
+            <img src="images/hellokiyty.gif" alt="" class="side-gif">
+            <div class="panel-title">Для моей любимой 💖</div>
+            <img src="images/hellokiyty1.gif" alt="" class="side-gif">
+        </div>
+
+        <!-- Основной контент главной -->
+        <div class="content">
+            <h2>Моей единственной Яне</h2>
+            
+            <div class="love-block">
+                <div class="text">
+                    <p>Каждый день с тобой — это настоящее чудо. Ты делаешь мою жизнь ярче, теплее и счастливее.</p>
+                </div>
+                <img src="images/2.jpg" alt="Наше фото" class="block-photo">
+            </div>
+
+            <div class="love-block reverse">
+                <div class="text">
+                    <p>Когда я смотрю на тебя, я понимаю — все мечты сбываются. Ты самая лучшая, что случилась со мной.</p>
+                </div>
+                <img src="images/3.jpg" alt="Еще фото" class="block-photo">
+            </div>
+
+            <!-- Кнопки навигации -->
+            <div class="nav-buttons">
+                <button class="nav-btn" id="moments-btn"> Моменты нашего года</button>
+                <button class="nav-btn" id="memories-btn"> Фотографии-воспоминания</button>
+            </div>
+        </div>
+    </section>
+
+   <!-- ЭКРАН 3: МОМЕНТЫ НАШЕГО ГОДА -->
+<section id="moments-section" class="screen hidden">
+    <div class="top-panel">
+        <img src="images/hellokiyty.gif" alt="" class="side-gif">
+        <div class="panel-title">Моменты нашего года</div>
+        <img src="images/hellokiyty1.gif" alt="" class="side-gif">
+    </div>
+    <div class="content">
+        <h2>Лучшие моменты за этот год ✨</h2>
+        
+        <!-- Момент 1 -->
+        <div class="moment-block">
+            <div class="moment-photo-container">
+                <img src="images/4.jpg" alt="Момент 1" class="moment-photo">
+                <div class="moment-number">1</div>
+            </div>
+            <div class="moment-text">
+                <h3>Наши вечерние просмотры сериалов</h3>
+                <p>Каждый раз смотря сериалы, или что либо другое мы все равно думаем друг о друге</p>
+                <div class="moment-date">📅 27 декабрь 2025</div>
+            </div>
+        </div>
+
+        <!-- Момент 2 -->
+        <div class="moment-block reverse">
+            <div class="moment-photo-container">
+                <img src="images/5.jpg" alt="Момент 2" class="moment-photo">
+                <div class="moment-number">2</div>
+            </div>
+            <div class="moment-text">
+                <h3>Мой день рождения</h3>
+                <p>День когда я встретил тебя и переродился, ты сделала тот день прекрасным, хоть он и был серым и мрачным</p>
+                <div class="moment-date">📅 28 мая 2025</div>
+            </div>
+        </div>
+
+        <!-- Момент 3 -->
+        <div class="moment-block">
+            <div class="moment-photo-container">
+                <img src="images/6.jpg" alt="Момент 3" class="moment-photo">
+                <div class="moment-number">3</div>
+            </div>
+            <div class="moment-text">
+                <h3>Тот самый вечер</h3>
+                <p>Когда я предложил тебе вступить в отношения и ты не отказалась, ты не пожалеешь, будет только лучше</p>
+                <div class="moment-date">📅 9 июля 2025</div>
+            </div>
+        </div>
+
+        <button class="back-btn" id="back-from-moments">← Назад к любви</button>
+    </div>
+</section>
+    <!-- ЭКРАН 4: ФОТО-ВОСПОМИНАНИЯ -->
+    <section id="memories-section" class="screen hidden">
+        <!-- Контейнер с плавающими сердечками -->
+        <div class="heart-container">
+            <div class="floating-heart heart-1" style="left: 10%; top: 20%;">❤️</div>
+            <div class="floating-heart heart-2" style="left: 20%; top: 60%;">❤️</div>
+            <div class="floating-heart heart-3" style="left: 40%; top: 10%;">❤️</div>
+            <div class="floating-heart heart-4" style="left: 60%; top: 80%;">❤️</div>
+            <div class="floating-heart heart-5" style="left: 80%; top: 40%;">❤️</div>
+            <div class="floating-heart heart-1" style="left: 30%; top: 90%;">❤️</div>
+            <div class="floating-heart heart-2" style="left: 70%; top: 20%;">❤️</div>
+            <div class="floating-heart heart-3" style="left: 90%; top: 70%;">❤️</div>
+            <div class="floating-heart heart-4" style="left: 5%; top: 50%;">❤️</div>
+            <div class="floating-heart heart-5" style="left: 50%; top: 5%;">❤️</div>
+        </div>
+        
+        <div class="top-panel">
+            <img src="images/hellokiyty.gif" alt="" class="side-gif">
+            <div class="panel-title">Фотографии-воспоминания 📷</div>
+            <img src="images/hellokiyty1.gif" alt="" class="side-gif">
+        </div>
+        
+        <div class="content">
+            <h2>10 причин почему ты лучшая</h2>
+            <p class="memories-intro">Каждая фотография — это напоминание о твоей невероятности</p>
+            
+            <!-- Галерея фотографий -->
+            <div class="gallery">
+                <!-- Фото 1 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/7.jpg" alt="Воспоминание 1" class="memory-photo">
+                        <div class="photo-number">01</div>
+                    </div>
+                    <div class="photo-caption">Ты прекрасна</div>
+                </div>
+                
+                <!-- Фото 2 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/8.jpg" alt="Воспоминание 2" class="memory-photo">
+                        <div class="photo-number">02</div>
+                    </div>
+                    <div class="photo-caption">Я люблю тебя</div>
+                </div>
+                
+                <!-- Фото 3 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/9.jpg" alt="Воспоминание 3" class="memory-photo">
+                        <div class="photo-number">03</div>
+                    </div>
+                    <div class="photo-caption">Здесь я самый счастливый</div>
+                </div>
+                
+                <!-- Фото 4 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/10.jpg" alt="Воспоминание 4" class="memory-photo">
+                        <div class="photo-number">04</div>
+                    </div>
+                    <div class="photo-caption">Люблю наши объятия</div>
+                </div>
+                
+                <!-- Фото 5 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/11.jpg" alt="Воспоминание 5" class="memory-photo">
+                        <div class="photo-number">05</div>
+                    </div>
+                    <div class="photo-caption">Самая лучшая</div>
+                </div>
+                
+                <!-- Фото 6 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/12.jpg" alt="Воспоминание 6" class="memory-photo">
+                        <div class="photo-number">06</div>
+                    </div>
+                    <div class="photo-caption">Ангелочек мой</div>
+                </div>
+                
+                <!-- Фото 7 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/13.jpg" alt="Воспоминание 7" class="memory-photo">
+                        <div class="photo-number">07</div>
+                    </div>
+                    <div class="photo-caption">Твои глаза прекрасны</div>
+                </div>
+                
+                <!-- Фото 8 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/14.jpg" alt="Воспоминание 8" class="memory-photo">
+                        <div class="photo-number">08</div>
+                    </div>
+                    <div class="photo-caption">Я всегда буду рядом</div>
+                </div>
+                
+                <!-- Фото 9 -->
+                <div class="photo-item">
+                    <div class="photo-frame">
+                        <img src="images/15.jpg" alt="Воспоминание 9" class="memory-photo">
+                        <div class="photo-number">09</div>
+                    </div>
+                    <div class="photo-caption">У нас всё получится</div>
+                </div>
+                
+                <!-- Фото 10 - теперь видео! -->
+                <div class="photo-item">
+                    <div class="photo-frame video-frame">
+                        <!-- Контейнер для видео -->
+                        <div class="video-container">
+                            <video class="memory-video" preload="metadata" playsinline>
+                                <source src="images/last_memory.mp4" type="video/mp4">
+                                Ваш браузер не поддерживает видео.
+                            </video>
+                        </div>
+                        
+                        <!-- Кнопка play поверх видео -->
+                        <div class="video-play-button">▶</div>
+                        
+                        <div class="photo-number">10</div>
+                    </div>
+                    <div class="photo-caption">Я верю в нас и в нашу любовь</div>
+                </div>
+            </div>
+            
+            <!-- ⬇⬇⬇ ВОТ ОНА - КНОПКА "НАЗАД" ⬇⬇⬇ -->
+            <button class="back-btn" id="back-from-memories">← Назад к любви</button>
+            
+        </div>
+    </section>
+
+    <!-- Подключаем JavaScript файл -->
+    <script src="script.js"></script>
+</body>
+</html>

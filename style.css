@@ -1,0 +1,1152 @@
+﻿/* ===== СБРОС И БАЗОВЫЕ СТИЛИ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0a2e36 0%, #1b5e7a 100%);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== ОБЩИЕ СТИЛИ ДЛЯ ЭКРАНОВ ===== */
+.screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */
+.top-panel {
+    width: 100%;
+    background: linear-gradient(90deg, #0a2e36 0%, #1a3c47 50%, #0a2e36 100%);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 140px;
+    border-bottom: 4px solid #f8d568;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ГИФКИ В ПАНЕЛИ */
+.side-gif {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(248, 213, 104, 0.9));
+    transition: all 0.3s ease;
+}
+
+.side-gif:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(248, 213, 104, 1));
+}
+
+/* ЗАГОЛОВОК В ЦЕНТРЕ ПАНЕЛИ */
+.panel-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #f8d568;
+    text-shadow: 0 0 10px rgba(248, 213, 104, 0.7);
+    padding: 0 25px;
+    text-align: center;
+    flex: 1;
+}
+
+/* ===== ЭКРАН 1: ПРИВЕТСТВИЕ ===== */
+#start-screen .content {
+    padding-top: 60px;
+}
+
+/* Контейнер для фото с гифкой */
+.photo-container {
+    position: relative;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+/* Главное фото (1.jpg) */
+.main-photo {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 
+        0 0 40px rgba(248, 213, 104, 0.7),
+        inset 0 0 30px rgba(255, 255, 255, 0.4);
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.main-photo:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+/* Гифка справа сверху у фото */
+.photo-gif {
+    position: absolute;
+    top: -25px;
+    right: -30px;
+    width: 90px;
+    height: auto;
+    z-index: 10;
+    filter: drop-shadow(0 0 15px rgba(248, 213, 104, 0.9));
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Анимация плавания для гифки */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Заголовок */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.8rem;
+    color: #f8d568;
+    margin-bottom: 25px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(248, 213, 104, 0.5);
+}
+
+.greeting-text {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 50px;
+    color: #e0f7fa;
+    max-width: 750px;
+    padding: 0 20px;
+}
+
+/* Кнопка ВХОД */
+.magic-button {
+    padding: 22px 55px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ff6b6b, #f8d568);
+    color: #0a2e36;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 10px 35px rgba(248, 213, 104, 0.6),
+        0 0 0 3px rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.magic-button:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 
+        0 18px 45px rgba(248, 213, 104, 0.8),
+        0 0 0 3px rgba(255, 255, 255, 0.25);
+    background: linear-gradient(45deg, #f8d568, #ff6b6b);
+}
+
+/* ===== ЭКРАН 2: ГЛАВНАЯ ===== */
+#main-screen h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #f8d568;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Блоки с фото и текстом */
+.love-block {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 35px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.love-block:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.love-block.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Фото в блоках */
+.block-photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+}
+
+.block-photo:hover {
+    transform: scale(1.04);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+.text {
+    flex: 1;
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #e0f7fa;
+}
+
+.love-block.reverse .text {
+    text-align: right;
+}
+
+/* ===== КНОПКИ НАВИГАЦИИ ===== */
+.nav-buttons {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-btn {
+    padding: 20px 45px;
+    font-size: 1.3rem;
+    background: rgba(78, 205, 196, 0.2);
+    color: white;
+    border: 2px solid #4ecdc4;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 240px;
+}
+
+.nav-btn:hover {
+    background: #4ecdc4;
+    color: #0a2e36;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(78, 205, 196, 0.5);
+}
+
+/* ===== ЭКРАН 3: МОМЕНТЫ НАШЕГО ГОДА ===== */
+#moments-section {
+    background: rgba(10, 46, 54, 0.98);
+}
+
+.moment-block {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 70px;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 35px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 950px;
+    border: 1px solid rgba(248, 213, 104, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.moment-block:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    border-color: rgba(248, 213, 104, 0.5);
+}
+
+.moment-block.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Контейнер для фото с номером */
+.moment-photo-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.moment-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+}
+
+.moment-block:hover .moment-photo {
+    transform: scale(1.03);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Номер момента */
+.moment-number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff6b6b, #f8d568);
+    color: #0a2e36;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+/* Текст момента */
+.moment-text {
+    flex: 1;
+    text-align: left;
+}
+
+.moment-block.reverse .moment-text {
+    text-align: right;
+}
+
+.moment-text h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #f8d568;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.moment-text p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #e0f7fa;
+    margin-bottom: 25px;
+}
+
+.moment-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.1);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+/* ===== ЭКРАН 4: ФОТО-ВОСПОМИНАНИЯ ===== */
+#memories-section {
+    background: rgba(10, 46, 54, 0.98);
+    position: relative;
+    overflow: hidden;
+}
+
+.memories-intro {
+    font-size: 1.3rem;
+    color: #e0f7fa;
+    margin-bottom: 50px;
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ГАЛЕРЕЯ */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Элемент фотографии */
+.photo-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(248, 213, 104, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(248, 213, 104, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Рамка для фото */
+.photo-frame {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(248, 213, 104, 0.1), rgba(255, 107, 107, 0.1));
+}
+
+/* ФОТОГРАФИИ */
+.memory-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+    display: block;
+}
+
+.photo-item:hover .memory-photo {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
+}
+/* ===== ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ ВИДЕО ===== */
+.video-frame {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+/* ВИДЕО БЕЗ ПОВОРОТА И БЕЗ ОБРЕЗКИ */
+.memory-video {
+    width: auto; /* Автоматическая ширина */
+    height: 100%; /* Высота как у контейнера */
+    max-width: 100%; /* Не шире контейнера */
+    object-fit: contain; /* Не обрезаем, показываем полностью */
+    display: block;
+    background: #000;
+}
+
+/* Если видео вверх ногами - раскомментируй это: */
+/*
+.memory-video {
+    transform: rotate(180deg); // Поворот на 180 если вверх ногами
+}
+*/
+
+/* Кнопка play в центре */
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(248, 213, 104, 0.9);
+    border-radius: 50%;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #0a2e36;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.video-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 107, 107, 0.9);
+}
+
+/* Когда видео играет - скрываем кнопку */
+.video-frame.playing .video-play-button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Скрываем стандартные контролы на десктопе */
+@media (min-width: 769px) {
+    .memory-video::-webkit-media-controls {
+        display: none !important;
+    }
+}
+
+/* Для мобильных - стандартные контролы */
+@media (max-width: 768px) {
+    .video-play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.7rem;
+    }
+    
+    /* На мобилках показываем стандартные контролы */
+    .memory-video::-webkit-media-controls {
+        display: flex !important;
+    }
+}
+
+/* На мобилках показываем стандартные контролы */
+@media (max-width: 768px) {
+    .video-play-button {
+        display: none;
+    }
+    
+    /* На мобилках не поворачиваем видео */
+    .memory-video {
+        transform: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .video-container {
+        height: 100%;
+    }
+}
+
+/* Номер фото/видео */
+.photo-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #f8d568);
+    color: #0a2e36;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border: 2px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+/* Подпись к фото */
+.photo-caption {
+    font-size: 1.3rem;
+    color: #f8d568;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.4;
+    padding: 18px 12px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(248, 213, 104, 0.15);
+    border-radius: 12px;
+    border: 2px solid rgba(248, 213, 104, 0.3);
+    margin-top: 15px;
+    transition: all 0.4s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.photo-item:hover .photo-caption {
+    background: rgba(248, 213, 104, 0.25);
+    border-color: rgba(248, 213, 104, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(248, 213, 104, 0.2);
+}
+
+/* Эффект сердечек при наведении */
+.photo-item::before {
+    content: "❤️";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 2rem;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.photo-item:hover::before {
+    opacity: 1;
+    top: 10px;
+    right: 10px;
+}
+
+/* ===== ПЛАВАЮЩИЕ СЕРДЕЧКИ ===== */
+.heart-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0;
+    z-index: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.7));
+    animation: floatHeart 20s linear infinite;
+}
+
+.heart-1 { animation: floatHeart 25s linear infinite; }
+.heart-2 { animation: floatHeart2 22s linear infinite; }
+.heart-3 { animation: floatHeart3 30s linear infinite; }
+.heart-4 { animation: floatHeart4 18s linear infinite; }
+.heart-5 { animation: floatHeart5 27s linear infinite; }
+
+@keyframes floatHeart {
+    0% { transform: translate(0, 100vh) rotate(0deg) scale(0.5); opacity: 0; }
+    10% { opacity: 0.4; }
+    50% { opacity: 0.6; transform: translate(50vw, 50vh) rotate(180deg) scale(1); }
+    90% { opacity: 0.3; }
+    100% { transform: translate(100vw, -100px) rotate(360deg) scale(0.3); opacity: 0; }
+}
+
+@keyframes floatHeart2 {
+    0% { transform: translate(100vw, 50vh) rotate(0deg) scale(0.3); opacity: 0; }
+    20% { opacity: 0.5; }
+    60% { opacity: 0.7; transform: translate(30vw, 30vh) rotate(270deg) scale(1.2); }
+    80% { opacity: 0.2; }
+    100% { transform: translate(-100px, 100vh) rotate(450deg) scale(0.4); opacity: 0; }
+}
+
+@keyframes floatHeart3 {
+    0% { transform: translate(50vw, 100vh) rotate(0deg) scale(0.6); opacity: 0; }
+    15% { opacity: 0.6; }
+    70% { opacity: 0.8; transform: translate(70vw, 20vh) rotate(360deg) scale(1.1); }
+    100% { transform: translate(100vw, -50px) rotate(720deg) scale(0.2); opacity: 0; }
+}
+
+@keyframes floatHeart4 {
+    0% { transform: translate(-50px, 50vh) rotate(0deg) scale(0.4); opacity: 0; }
+    25% { opacity: 0.5; transform: translate(20vw, 70vh) rotate(90deg) scale(0.9); }
+    75% { opacity: 0.7; transform: translate(80vw, 40vh) rotate(270deg) scale(1.3); }
+    100% { transform: translate(100vw, 100vh) rotate(360deg) scale(0.3); opacity: 0; }
+}
+
+@keyframes floatHeart5 {
+    0% { transform: translate(100vw, 20vh) rotate(0deg) scale(0.5); opacity: 0; }
+    30% { opacity: 0.6; transform: translate(60vw, 80vh) rotate(120deg) scale(1.1); }
+    60% { opacity: 0.8; transform: translate(20vw, 30vh) rotate(240deg) scale(1.4); }
+    90% { opacity: 0.3; transform: translate(90vw, 10vh) rotate(360deg) scale(0.6); }
+    100% { transform: translate(0, 100vh) rotate(480deg) scale(0.2); opacity: 0; }
+}
+
+/* ===== КНОПКИ НАЗАД ===== */
+.back-btn {
+    padding: 15px 35px;
+    margin-top: 40px;
+    background: rgba(255, 107, 107, 0.2);
+    color: white;
+    border: 2px solid #ff6b6b;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    z-index: 3;
+    position: relative;
+}
+
+.back-btn:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1100px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .top-panel {
+        padding: 15px 20px;
+        min-height: 120px;
+    }
+    
+    .side-gif {
+        height: 90px;
+    }
+    
+    .panel-title {
+        font-size: 2.2rem;
+        padding: 0 15px;
+    }
+    
+    .main-photo {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .photo-gif {
+        width: 70px;
+        top: -20px;
+        right: -20px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .love-block {
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px;
+    }
+    
+    .love-block.reverse {
+        flex-direction: column;
+    }
+    
+    .block-photo {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .text {
+        text-align: center !important;
+        font-size: 1.1rem;
+    }
+    
+    .moment-block {
+        flex-direction: column;
+        gap: 30px;
+        padding: 25px;
+        margin-bottom: 50px;
+    }
+    
+    .moment-block.reverse {
+        flex-direction: column;
+    }
+    
+    .moment-photo {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .moment-text {
+        text-align: center !important;
+    }
+    
+    .moment-text h3 {
+        font-size: 2.2rem;
+    }
+    
+    .moment-text p {
+        font-size: 1.1rem;
+    }
+    
+    .moment-number {
+        top: -12px;
+        left: -12px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+    }
+    
+    .nav-btn {
+        min-width: 200px;
+        padding: 15px 30px;
+    }
+    
+    .memory-photo,
+    .video-frame,
+    .memory-video {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 400px;
+    }
+    
+    .memories-intro {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-panel {
+        padding: 10px 15px;
+        min-height: 100px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .side-gif {
+        height: 70px;
+    }
+    
+    .panel-title {
+        font-size: 1.8rem;
+        order: -1;
+        margin-bottom: 10px;
+    }
+    
+    .main-photo {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .photo-gif {
+        width: 60px;
+        top: -15px;
+        right: -15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .magic-button {
+        padding: 18px 35px;
+        font-size: 1.3rem;
+    }
+    
+    .nav-buttons {
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        min-width: 100%;
+        padding: 15px;
+    }
+    
+    .gallery {
+        gap: 20px;
+    }
+    
+    .photo-item {
+        padding: 15px;
+    }
+    
+    .memory-photo,
+    .video-frame,
+    .memory-video {
+        height: 200px;
+    }
+    
+    .photo-caption {
+        font-size: 1.1rem;
+        min-height: 70px;
+        padding: 15px 10px;
+    }
+    
+    .photo-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+/* СТИЛИ ДЛЯ ВИДЕО */
+.video-frame {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: #000;
+    cursor: pointer;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Видео - нормальное, без поворота */
+.memory-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #000;
+}
+
+/* Кнопка play в центре */
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(248, 213, 104, 0.9);
+    border-radius: 50%;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #0a2e36;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.video-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 107, 107, 0.9);
+}
+
+/* Когда видео играет - скрываем кнопку */
+.video-frame.playing .video-play-button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Для мобильных - стандартные контролы */
+@media (max-width: 768px) {
+    .video-play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.7rem;
+    }
+}
+/* ===== ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ ВИДЕО ===== */
+.video-frame {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+/* СТИЛИ ДЛЯ ВИДЕО */
+.video-frame {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: #000;
+    cursor: pointer;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+/* Видео - нормальное, без обрезки */
+.memory-video {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    background: #000;
+}
+
+/* Если видео все равно вверх ногами, раскомментируй: */
+/*
+.memory-video {
+    transform: rotate(180deg);
+}
+*/
+
+/* Кнопка play в центре */
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: rgba(248, 213, 104, 0.9);
+    border-radius: 50%;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #0a2e36;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.video-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 107, 107, 0.9);
+}
+
+/* Когда видео играет - скрываем кнопку */
+.video-frame.playing .video-play-button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Номер поверх видео */
+.video-frame .photo-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 11; /* Выше кнопки play */
+}
+
+/* Скрываем стандартные контролы на десктопе */
+@media (min-width: 769px) {
+    .memory-video::-webkit-media-controls {
+        display: none !important;
+    }
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+    .video-play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.7rem;
+    }
+    
+    .memory-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-frame {
+        height: 200px;
+    }
+}
+/* КНОПКА НАЗАД - ДОЛЖНА БЫТЬ ПОВЕРХ СЕРДЕЧЕК */
+.back-btn {
+    padding: 18px 40px;
+    margin-top: 50px;
+    background: linear-gradient(45deg, rgba(255, 107, 107, 0.3), rgba(248, 213, 104, 0.3));
+    color: white;
+    border: 3px solid #ff6b6b;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    z-index: 9999 !important; /* ОЧЕНЬ ВАЖНО! */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.back-btn:hover {
+    background: linear-gradient(45deg, #ff6b6b, #f8d568);
+    color: #0a2e36;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 15px 35px rgba(255, 107, 107, 0.5),
+        0 0 0 2px rgba(255, 255, 255, 0.2);
+    border-color: #f8d568;
+}
+
+/* Уменьшаем z-index у сердечек */
+.floating-heart {
+    z-index: 5; /* было 10 или больше */
+}
+
+/* Увеличиваем z-index у галереи */
+.gallery {
+    z-index: 10;
+}
+
+/* Убедимся что content тоже выше сердечек */
+#memories-section .content {
+    position: relative;
+    z-index: 20;
+}
